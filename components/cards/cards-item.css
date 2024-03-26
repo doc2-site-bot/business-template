@@ -14,7 +14,7 @@ web-cards-item:has(h3) {
 
 web-cards-item h3 {
     border-bottom: 1px solid var(--secondary-color);
-    padding-bottom: .9rem;
+    padding-bottom: 16px;
     color: inherit;
 }
 
