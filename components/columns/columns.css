@@ -1,0 +1,22 @@
+web-columns {
+    display: block;
+    max-width: var(--layout-width);
+    margin: 64px auto;
+    padding: 0 16px;
+}
+
+web-columns h2 {
+    text-align: center;
+}
+
+web-columns::part(columns) {
+    display: flex;
+    gap: 32px;
+}
+
+@media (width <= 768px) {
+    web-columns::part(columns) {
+        flex-direction: column;
+        align-items: center;
+    }
+}

@@ -1,0 +1,73 @@
+web-banner {
+    display: block;
+    max-width: var(--layout-width);
+    margin: auto;
+    padding: 16px;
+}
+
+web-banner h2 {
+    color: var(--primary-color);
+    font-size: 30px;
+    text-transform: uppercase;
+    line-height: 1.6em;
+}
+
+web-banner strong {
+    font-weight: 500;
+}
+
+web-banner p[slot="picture"] {
+    margin: 0;
+}
+
+web-banner img {
+    width: 260px;
+}
+
+web-banner::part(columns) {
+    display: flex;
+    gap: 128px;
+}
+
+web-banner::part(text) {
+    display: flex;
+    gap: 32px;
+}
+
+web-banner p[slot="highlight"] {
+    text-align: justify;
+    color: #000000;
+    font-size: 20px;
+    line-height: 30px;
+    margin-top: 0;
+}
+
+web-banner p[slot="action"] {
+    text-align: right;
+}
+
+web-banner p:is([slot="left"], [slot="right"]) {
+    font-size: 16px;
+    line-height: 26px;
+    text-align: justify;
+}
+
+@media (width <= 1024px) {
+    web-banner img {
+        max-width: 420px;
+    }
+
+    web-banner::part(columns) {
+        flex-direction: column;
+        gap: 24px
+    }
+
+    web-banner::part(text) {
+        flex-direction: column;
+        gap: 0;
+    }
+
+    web-banner p[slot="action"] {
+        text-align: left;
+    }
+}

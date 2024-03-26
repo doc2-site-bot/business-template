@@ -1,0 +1,144 @@
+@keyframes zoom {
+    0% {
+        transform: scale(1, 1);
+    }
+
+    50% {
+        transform: scale(1.2, 1.2);
+    }
+    100% {
+        transform: scale(1, 1);
+    }
+}
+
+web-hero {
+    display: block;
+    background: black;
+    overflow: hidden;
+}
+
+web-hero::after {
+    content: '';
+    background: rgb(0,0,0,.7);
+    position: absolute;
+    top: 0;
+    left: 0px;
+    right: 0px;
+    z-index: 1;
+    height: 415px;
+}
+
+web-hero.fullscreen::after {
+    height: 100vh;
+    background: rgb(0,0,0,.5);
+}
+
+web-hero::part(wrapper) {
+    position: relative;
+    height: 100%;
+    width: 100%
+}
+
+web-hero [slot="background"] {
+    margin: 0;
+}
+
+web-hero [slot="background"] picture {
+    display: flex;
+    position: relative;
+}
+
+web-hero [slot="background"] img {
+    height: 415px;
+    object-fit: cover;
+    animation: zoom 50s ease infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    web-hero [slot="background"] img {
+        animation: none;
+    }
+}
+
+web-hero.fullscreen [slot="background"] img {
+    width: 100vw;
+    height: 100vh;
+}
+
+web-hero::part(text) {
+    position: absolute;
+    max-width: var(--layout-width);
+    margin: auto;
+    z-index: 2;
+    top: 0;
+    left: 0;
+    right: 0;
+}
+
+web-hero h1 {
+    position: absolute;
+    text-transform: uppercase;
+    top: calc(415px / 2 - 80px);
+    padding-inline: 16px;
+    text-align: center;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+web-hero.fullscreen h1 {
+    top: calc(50vh - 140px);
+    width: 600px;
+    text-align: left;
+}
+
+@media (width <= 1024px) {
+    web-hero.fullscreen h1 {
+        width: auto;
+    }
+
+    web-hero:not(.fullscreen) [slot="background"] img {
+        height: 280px;
+    }
+
+    web-hero:not(.fullscreen) h1 {
+        top: calc(280px / 2 - 100px);
+        font-size: 28px;
+        line-height: 38px;
+    }
+
+    web-hero:not(.fullscreen)::after {
+        height: 280px;
+    }
+}
+
+web-hero.fullscreen.centered h1 {
+    font-size: 100px;
+    position: static;
+    text-align: center;
+}
+
+web-hero.fullscreen.centered p {
+    font-size: 20px;
+}
+
+web-hero.fullscreen.centered::part(text) {
+    color: white;
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 16px;
+    box-sizing: border-box;
+}
+
+web-hero .button {
+    background: white;
+    color: black;
+}
+
+web-hero .button:hover {
+    background: var(--secondary-color);
+}

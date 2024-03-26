@@ -1,0 +1,86 @@
+web-columns-item {
+    display: block;
+    flex: 1;
+}
+
+web-columns-item::part(wrapper) {
+    position: relative;
+}
+
+web-columns-item.cta::part(overlay) {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(0,0,0,.8);
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity var(--animation-duration);
+}
+
+web-columns-item:hover::part(overlay) {
+    opacity: 1;
+}
+
+web-columns-item.cta::part(text) {
+    display: flex;
+    flex-direction: column;
+    padding: 32px;
+    gap: 32px;
+    position: absolute;
+    top: calc(50% - 100px);
+    height: 200px;
+}
+
+web-columns-item h3 {
+    text-transform: none;
+    font-size: 28px;
+    color: transparent;
+}
+
+web-columns-item p {
+    margin: 0;
+    text-align: justify;
+    line-height: 26px;
+}
+
+web-columns-item span {
+    font-size: 18px;
+    line-height: 26px;
+    color: transparent;
+}
+
+web-columns-item picture {
+    display: flex;
+}
+
+web-columns-item img {
+    max-height: 500px;
+    object-fit: cover;
+}
+
+web-columns-item:hover :is(h3, span) {
+    color: white;
+}
+
+web-columns-item[slot="heading"] p {
+    text-align: center;
+    margin-bottom: 48px;
+}
+
+@media (width <= 768px) {
+    web-columns-item img {
+        max-width: 473px;
+        height: 562px;
+        object-fit: cover;
+    }
+
+    web-columns-item.cta::part(overlay) {
+        opacity: 1;
+    }
+
+    web-columns-item :is(h3, span) {
+        color: white;
+    }
+}

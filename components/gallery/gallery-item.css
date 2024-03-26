@@ -1,0 +1,16 @@
+web-gallery-item {
+    display: block;
+    flex: 1;
+}
+
+web-gallery-item:has(picture) {
+    max-width: 130px;
+}
+
+web-gallery-item p {
+    margin: 0;
+}
+
+web-gallery-item span {
+    display: none;
+}

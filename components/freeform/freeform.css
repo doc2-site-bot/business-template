@@ -1,0 +1,42 @@
+web-freeform {
+    display: block;
+}
+
+web-freeform::part(wrapper) {
+    max-width: 900px;
+    margin: auto;
+    padding: 32px 16px;
+}
+
+web-freeform :is(h2, h3) {
+    color: black;
+    padding-bottom: 8px;
+    font-weight: bold;
+}
+
+web-freeform h2 {
+    font-size: 16px;
+}
+
+web-freeform h3 {
+    font-size: 14px;
+}
+
+web-freeform > p {
+    line-height: 26px;
+}
+
+web-freeform > p picture[style*="--aspect-ratio"] {
+    overflow: hidden;
+    padding-top: var(--aspect-ratio);
+    position: relative;
+    display: block;
+}
+
+web-freeform > p picture[style*="--aspect-ratio"] img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}

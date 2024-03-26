@@ -1,0 +1,35 @@
+web-resources {
+    display: block;
+    position: relative;
+    padding-bottom: 64px;
+}
+
+web-resources [slot="background"] img {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: black;
+    object-fit: cover;
+    object-position: top;
+}
+
+web-resources [slot="background"] h2 {
+    color: white;
+    text-align: center;
+    position: relative;
+    z-index: 1;
+}
+
+web-resources::part(columns) {
+    display: flex;
+    flex-wrap: wrap;
+    max-width: var(--layout-width);
+    width: 100%;
+    position: relative;
+    margin: auto;
+    gap: 48px;
+    justify-content: center;
+    padding-inline: 16px;
+    box-sizing: border-box;
+}

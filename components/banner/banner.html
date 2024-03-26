@@ -1,0 +1,18 @@
+<template shadowrootmode="open">
+    <slot name="heading"></slot>
+    <div part="columns">
+        <div part="column-1"><slot name="picture"></slot></div>
+        <div part="column-2">
+            <slot name="highlight"></slot>
+            <div part="text">
+                <div>
+                    <slot name="left"></slot>
+                </div>
+                <div>
+                    <slot name="right"></slot>
+                </div>
+            </div>
+            <div><slot name="action"></slot></div>
+        </div>
+    </div>
+</template>

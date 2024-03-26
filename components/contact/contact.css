@@ -1,0 +1,191 @@
+web-contact {
+    display: block;
+    background: black;
+    position: relative;
+}
+
+web-contact h2 {
+    color: white;
+    max-width: var(--layout-width);
+    margin: auto;
+}
+
+@media (width <= 768px) {
+    web-contact h2 {
+        padding-inline: 32px;
+    }
+}
+
+web-contact .heading-wrapper {
+    position: absolute;
+    background: black;
+    top: 0;
+    right: 0;
+    left: 0;
+    z-index: 1;
+}
+
+web-contact .form-wrapper {
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    max-width: var(--layout-width);
+    margin: auto;
+    z-index: 2;
+    width: 100%;
+}
+
+web-contact .maps {
+    position: relative;
+    padding-bottom: 56.25%;
+    overflow: hidden;
+    opacity: .2;
+    transition: opacity var(--animation-duration);
+}
+
+web-contact .maps:hover {
+    opacity: 1;
+}
+
+web-contact .maps iframe {
+    height: 100%;
+    width: 100%;
+    left: 0;
+    top: 0;
+    position: absolute;
+    border: none;
+}
+
+web-contact form {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    position: absolute;
+    right: 0;
+    top: 0;
+    background: white;
+    width: 50%;
+    padding: 32px;
+}
+
+web-contact form h3 {
+    text-transform: uppercase;
+    color: black;
+    font-size: 14px;
+    margin-bottom: 8px;
+}
+
+web-contact form :is(input:not([type="checkbox"]), textarea) {
+    font-size: 14px;
+    line-height: 24px;
+    padding: .5rem 0;
+    border: none;
+    border-bottom: 1px solid var(--secondary-color);
+    color: black;
+    font-family: var(--font-family);
+}
+
+web-contact input[type="checkbox"] {
+    transform: scale(1.3);
+    margin: 0.8rem 1.5rem 0 0;
+}
+
+web-contact form .privacy {
+    display: flex;
+    font-size: 14px;
+    line-height: 24px;
+    margin-top: 24px;
+}
+
+web-contact form .privacy label {
+    display: flex;
+    align-items: flex-start;
+}
+
+web-contact .button {
+    align-self: flex-start;
+}
+
+@media (width <= 768px) {
+    web-contact {
+        display: flex;
+        flex-direction: column;
+    }
+
+    web-contact :is(.form-wrapper, form) {
+        position: static;
+    }
+
+    web-contact form {
+        width: 100%;
+    }
+}
+
+web-contact .success {
+    padding: 16px;
+    border: 1px solid var(--secondary-color);
+}
+
+web-contact.secondary {
+    background: white;
+    max-width: var(--layout-width);
+    margin: auto;
+    padding: 64px 16px;
+}
+
+web-contact.secondary h3 {
+    display: none;
+}
+
+web-contact.secondary::part(text) {
+    display: flex;
+    flex-direction: column;
+    width: 40%;
+}
+
+web-contact.secondary form {
+    border: 1px solid var(--secondary-color);
+    right: 64px;
+}
+
+web-contact.secondary .form-wrapper {
+    top: 64px;
+}
+
+web-contact.secondary .maps {
+    opacity: 1;
+    margin-top: 24px;
+}
+
+web-contact.secondary p {
+    line-height: 26px;
+    text-align: justify;
+}
+
+web-contact.secondary .details {
+    display: flex;
+    margin: 0;
+    padding-block: 8px;
+    gap: 8px;
+    align-items: center;
+}
+
+web-contact.secondary .details span {
+    display: flex;
+}
+
+web-contact.secondary .details svg {
+    height: 20px;
+    width: 20px;
+}
+
+@media (width <= 768px) {
+    web-contact.secondary::part(text) {
+        width: 100%;
+    }
+}
+
+web-contact .cf-turnstile {
+    overflow: auto;
+}

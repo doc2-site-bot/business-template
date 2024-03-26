@@ -1,0 +1,10 @@
+<template shadowrootmode="open">
+    <a part="wrapper" href="#" aria-label="item">
+        <div><slot name="picture"></slot></div>
+        <div part="text"><slot></slot></div>
+    </a>
+    <div part="wrapper">
+        <div><slot name="picture"></slot></div>
+        <div part="text"><slot></slot></div>
+    </div>
+</template>

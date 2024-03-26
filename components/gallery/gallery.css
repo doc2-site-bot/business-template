@@ -1,0 +1,22 @@
+web-gallery {
+    display: block;
+    max-width: var(--layout-width);
+    margin: 64px auto;
+}
+
+web-gallery h2 {
+    text-align: center;
+}
+
+web-gallery::part(columns) {
+    display: flex;
+    gap: 128px;
+    align-items: center;
+    justify-content: center;
+}
+
+@media (width <= 1024px) {
+    web-gallery::part(columns) {
+        flex-direction: column;
+    }
+}

@@ -1,0 +1,108 @@
+{
+  "subdomain": "business-template",
+  "ssr": [
+    {
+      "select": {
+        "web-header-nav p:has(picture)": {
+          "slot": "logo"
+        },
+        "web-header-nav > ul": {
+          "slot": "menu"
+        },
+        "web-header-nav > ul:last-child": {
+          "slot": "submenu"
+        },
+        "web-header-nav > ul:last-child > li:last-child a": {
+          "class": "button"
+        },
+        "web-hero p:has(img)": {
+          "slot": "background"
+        },
+        "web-hero a": {
+          "class": "button"
+        },
+        "web-footer-nav-item:last-child": {
+          "slot": "legal"
+        },
+        "web-freeform web-hero": {
+          "slot": "hero"
+        }
+      },
+      "selectAll": {
+        "script[src*='banner'], script[src*='gallery'], script[src*='resources'], script[src*='footer-nav'], script[src*='contact']": {
+          "tagName": "template"
+        },
+        "web-banner h2": {
+          "slot": "heading"
+        },
+        "web-banner p:has(picture)": {
+          "slot": "picture"
+        },
+        "web-banner p:has(strong)": {
+          "slot": "highlight"
+        },
+        "web-banner p:has(a)": {
+          "slot": "action"
+        },
+        "web-banner a": {
+          "class": "button"
+        },
+        "web-banner p:has(strong) ~ p:not([slot='action']):nth-child(odd)": {
+          "slot": "left"
+        },
+        "web-banner p:has(strong) ~ p:not([slot='action']):nth-child(even)": {
+          "slot": "right"
+        },
+        "web-columns-item:has(h2)": {
+          "slot": "heading"
+        },
+        "web-columns-item p:has(picture)": {
+          "slot": "picture"
+        },
+        "web-columns-item:has(a)": {
+          "class": "cta"
+        },
+        "web-columns-item a": {
+          "tagName": "span"
+        },
+        "web-gallery-item:has(h2)": {
+          "slot": "heading"
+        },
+        "web-gallery-item p:has(picture)": {
+          "slot": "picture"
+        },
+        "web-gallery-item a": {
+          "tagName": "span"
+        },
+        "web-announcement p:has(picture)": {
+          "slot": "picture"
+        },
+        "web-announcement p:last-child a:only-child": {
+          "class": "button"
+        },
+        "web-cards-item:last-of-type > p:only-child > a:only-child": {
+          "class": "button"
+        },
+        "web-resources-item:first-of-type h2": {
+          "slot": "heading"
+        },
+        "web-resources-item:first-of-type p:has(picture)": {
+          "slot": "picture"
+        },
+        "web-resources-item:first-of-type": {
+          "slot": "background",
+          "tagName": "div"
+        },
+        "web-contact h2": {
+          "slot": "heading"
+        },
+        "web-contact.secondary .maps": {
+          "slot": "small-maps"
+        },
+        "web-contact.secondary p:has(var)": {
+          "class": "details"
+        }
+      }
+    }
+  ]
+}

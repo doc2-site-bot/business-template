@@ -1,0 +1,196 @@
+/* Global */
+:root {
+    --layout-width: 1280px;
+    --primary-color: #7D6200;
+    --secondary-color: #FFD700;
+    --animation-duration: 300ms;
+    --font-family: system-ui, sans-serif;
+
+    font-synthesis: none;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-text-size-adjust: 100%;
+}
+
+html {
+    font-family: var(--font-family);
+    scroll-behavior: smooth;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    overflow-x: hidden;
+}
+
+header:empty, footer:empty {
+    display: none;
+}
+
+var {
+    display: none;
+}
+
+/* Source: https://developer.chrome.com/en/articles/declarative-shadow-dom/ */
+*:not(:defined) > template[shadowrootmode] ~ * {
+    display: none;
+}
+
+/* Layout */
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 10;
+    background-color: transparent;
+    height: 190px;
+    padding: 30px 90px 20px;
+}
+
+header.is-scrolling {
+    height: 90px;
+    background-color: black;
+    padding: 0 90px;
+}
+
+@media (width <= 1280px) {
+    header, header.is-scrolling {
+        padding: 0 32px;
+    }
+}
+
+footer {
+    background-color: black;
+}
+
+footer > p:first-child {
+    margin: 0;
+}
+
+footer > p:first-child img {
+    width: 100vw;
+    height: auto;
+    object-fit: cover;
+}
+
+footer > p:last-child {
+    padding: 36px;
+    text-align: center;
+    margin: 32px auto 0;
+    max-width: var(--layout-width);
+    width: 100%;
+    font-size: 14px;
+}
+
+/* Default styles */
+h1, h2, h3 {
+    margin: 0;
+    scroll-margin-top: 128px;
+    font-weight: 100;
+    letter-spacing: .1rem;
+}
+
+ul, ol {
+    margin-block: 16px;
+}
+
+h1 {
+    padding-block: 64px;
+    font-size: 40px;
+    line-height: 55px;
+    color: white;
+    text-transform: uppercase;
+    font-weight: 100;
+}
+
+h2 {
+    color: var(--primary-color);
+    font-size: 30px;
+    text-transform: uppercase;
+    line-height: 1.6em;
+    padding-block: 32px;
+}
+
+h3 {
+    color: white;
+    font-size: 21px;
+    text-transform: uppercase;
+    line-height: 1.4em;
+}
+
+@media (width <= 768px) {
+    h1 {
+        font-size: 28px;
+        line-height: 38px;
+    }
+
+    h2 {
+        font-size: 24px;
+    }
+
+    h3 {
+        font-size: 20px;
+    }
+}
+
+img {
+    width: 100%;
+    height: auto;
+}
+
+a {
+    text-decoration: none;
+    transition: all var(--animation-duration);
+    color: var(--primary-color);
+}
+
+header .button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    background-color: transparent;
+    text-transform: uppercase;
+    padding: 2px 40px 2px 40px;
+    border: 1px solid white;
+    height: 38px;
+    cursor: pointer;
+    text-decoration: none;
+    transition: all var(--animation-duration);
+}
+
+header .button:hover {
+    border-color: var(--primary-color);
+    background-color: var(--primary-color);
+}
+
+main .button {
+    display: inline-flex;
+    font-size: 16px;
+    text-transform: uppercase;
+    line-height: 2em;
+    background-color: black;
+    border-style: solid;
+    border-width: 1px 1px 1px 1px;
+    border-color: white;
+    padding: 12px 30px 12px 30px;
+    color: white;
+    cursor: pointer;
+    transition: all var(--animation-duration);
+}
+
+main .button:hover {
+    border-color: var(--primary-color);
+    background-color: var(--primary-color);
+    color: white;
+}
+
+main .button[disabled] {
+    opacity: .3;
+    pointer-events: none;
+}

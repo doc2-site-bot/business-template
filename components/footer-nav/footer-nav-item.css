@@ -1,0 +1,24 @@
+web-footer-nav-item {
+    flex: 1;
+}
+
+web-footer-nav-item a {
+    color: white;
+}
+
+web-footer-nav-item ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+web-footer-nav-item li {
+    line-height: 24px;
+}
+
+web-footer-nav-item p:has(picture) + ul > li:first-child {
+    font-weight: bold;
+}

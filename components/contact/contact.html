@@ -1,0 +1,40 @@
+<template shadowrootmode="open">
+    <div class="heading-wrapper">
+        <slot name="heading"></slot>
+    </div>
+    <slot name="form"></slot>
+    <slot name="maps"></slot>
+    <div part="text">
+        <slot></slot>
+        <slot name="small-maps"></slot>
+    </div>
+</template>
+
+<div class="form-wrapper" slot="form">
+    <form>
+        <h3>Contact form</h3>
+        <input name="name" placeholder="First and last name *" required>
+        <input type="email" name="email" placeholder="Email *" required>
+        <input type="tel" name="tel" placeholder="Phone *" required>
+        <textarea name="message" placeholder="Message" required></textarea>
+        <div class="privacy">
+            <label>
+                <input type="checkbox" required>
+                <span>By submitting this form, I agree that the information collected may be processed for the purposes of my contact request and the ensuing commercial relationship. Find out more by consulting our <a href="/privacy-policy">privacy policy</a>.</span>
+            </label>
+        </div>
+        <div class="cf-turnstile" data-sitekey="0x4AAAAAAAEhZ_W5F6wAHa1_" data-theme="light"></div>
+        <button type="submit" class="button">Send</button>
+        <div class="success" hidden>Thank you for your message. We will revert back shortly.</div>
+    </form>
+</div>
+
+<div class="maps" slot="maps">
+    <iframe
+            title="Maps"
+            width="500"
+            height="500"
+            referrerPolicy="no-referrer-when-downgrade"
+            loading="lazy"
+            allowFullScreen></iframe>
+</div>

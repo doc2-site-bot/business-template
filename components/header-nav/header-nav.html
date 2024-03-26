@@ -1,0 +1,23 @@
+<template shadowrootmode="open">
+    <nav part="nav">
+        <a href="/" class="root" aria-label="homepage">
+            <slot name="logo"></slot>
+        </a>
+        <div part="menu">
+            <slot name="menu"></slot>
+        </div>
+        <div part="submenu">
+            <slot name="submenu"></slot>
+            <slot name="language"></slot>
+        </div>
+        <slot name="toggle"></slot>
+    </nav>
+</template>
+
+<button class="toggle" aria-label="toggle" slot="toggle">
+    <span class="line-top"></span>
+    <span class="line-middle">
+        <span class="line-middle-inner"></span>
+    </span>
+    <span class="line-bottom" ></span>
+</button>

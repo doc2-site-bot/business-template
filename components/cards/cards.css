@@ -1,0 +1,15 @@
+web-cards {
+    display: flex;
+    flex-wrap: wrap;
+    max-width: var(--layout-width);
+    margin: auto;
+    padding: 32px 16px 64px 16px;
+    gap: 32px;
+    justify-content: space-evenly;
+}
+
+@media (width <= 1024px) {
+    web-cards {
+        flex-direction: column;
+    }
+}
