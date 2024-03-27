@@ -39,6 +39,20 @@ if (site) {
     document.title += ` | ${site}`;
 }
 
+const icon = document.head.querySelector('meta[name="icon"]')?.content;
+if (icon) {
+    fetch(icon, {
+        headers: {
+            'x-cache-ttl': 300
+        },
+        priority: 'low'
+    })
+        .then(res => res.blob())
+        .then((blob) => {
+            document.head.querySelector('link[rel="icon"]').href = URL.createObjectURL(blob);
+        });
+}
+
 window.addEventListener('scroll', () => {
     document.querySelector('header').classList.toggle('is-scrolling', window.scrollY !== 0)
 });
