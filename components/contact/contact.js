@@ -22,7 +22,7 @@ window.customElements.define('web-contact', class extends Component {
                 button.disabled = true;
 
                 const formData = new FormData(form);
-                const req = await fetch(`https://api.doc2.site/v1/spreadsheets/${requests}/0`, {
+                const req = await fetch(`https://api.doc2.site/v1/spreadsheets/${requests.split('/').slice(-2).join('')}`, {
                     headers: {
                         'content-type': 'application/json'
                     },
