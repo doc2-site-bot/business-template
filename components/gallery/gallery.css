@@ -15,7 +15,7 @@ web-gallery::part(columns) {
     justify-content: center;
 }
 
-@media (width <= 1024px) {
+@media (width < 1024px) {
     web-gallery::part(columns) {
         flex-direction: column;
     }

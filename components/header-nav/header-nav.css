@@ -207,7 +207,7 @@ web-header-nav .toggle.is-selected .line-bottom {
     transform: translate3d(0px, -8px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(45deg) skew(0deg, 0deg);
 }
 
-@media (width <= 1024px) {
+@media (width < 1024px) {
     header {
         padding: 0 16px !important;
         height: auto;

@@ -54,7 +54,7 @@ if (icon) {
 }
 
 window.addEventListener('scroll', () => {
-    document.querySelector('header').classList.toggle('is-scrolling', window.scrollY !== 0)
+    document.querySelector('header').classList.toggle('is-scrolling', window.scrollY > 0)
 });
 
 document.addEventListener('DOMContentLoaded', () => {

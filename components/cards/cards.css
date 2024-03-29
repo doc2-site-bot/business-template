@@ -8,7 +8,7 @@ web-cards {
     justify-content: space-evenly;
 }
 
-@media (width <= 1024px) {
+@media (width < 1024px) {
     web-cards {
         flex-direction: column;
     }

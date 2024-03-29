@@ -91,7 +91,7 @@ web-hero.fullscreen h1 {
     text-align: left;
 }
 
-@media (width <= 1024px) {
+@media (width < 1024px) {
     web-hero.fullscreen h1 {
         width: auto;
     }

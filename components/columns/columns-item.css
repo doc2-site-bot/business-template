@@ -5,6 +5,7 @@ web-columns-item {
 
 web-columns-item::part(wrapper) {
     position: relative;
+    display: block;
 }
 
 web-columns-item.cta::part(overlay) {
@@ -35,7 +36,7 @@ web-columns-item.cta::part(text) {
 
 web-columns-item h3 {
     text-transform: none;
-    font-size: 28px;
+    font-size: 24px;
     color: transparent;
 }
 
@@ -69,7 +70,7 @@ web-columns-item[slot="heading"] p {
     margin-bottom: 48px;
 }
 
-@media (width <= 768px) {
+@media (width < 768px) {
     web-columns-item img {
         max-width: 473px;
         height: 562px;

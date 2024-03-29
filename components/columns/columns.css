@@ -14,7 +14,7 @@ web-columns::part(columns) {
     gap: 32px;
 }
 
-@media (width <= 768px) {
+@media (width < 1024px) {
     web-columns::part(columns) {
         flex-direction: column;
         align-items: center;
