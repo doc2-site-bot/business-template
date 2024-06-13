@@ -1,0 +1,9 @@
+{
+  "name": "business-template",
+  "scripts": {
+    "dev": "doc2 live --dev"
+  },
+  "devDependencies": {
+    "@doc2/cli": "^2.8.0"
+  }
+}
