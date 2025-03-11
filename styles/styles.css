@@ -13,6 +13,10 @@
     -webkit-text-size-adjust: 100%;
 }
 
+@view-transition {
+    navigation: auto;
+}
+
 html {
     font-family: var(--font-family);
     scroll-behavior: smooth;
